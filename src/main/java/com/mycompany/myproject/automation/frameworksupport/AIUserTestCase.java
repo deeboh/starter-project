@@ -22,7 +22,7 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
 
     public void genericSearch() {
         LOG(true, "---------- Generic Search. Likelihood=%s ----------", HIGH_LEVEL);
-        webElementVisible(Constants.LOGO_ANCHOR);
+        webElementVisible(Constants.LOGO_ANCHOR_IMAGE);
         webAction(Constants.KEYWORD_INPUT, COMMON_SEARCH_TERM);
         webAction(Constants.SEARCH_INPUT);
         webElementTextEquals(combine(Constants.VARIABLE_BY_TEXT_ANCHOR, COMMON_SEARCH_TERM), COMMON_SEARCH_TERM);
@@ -51,7 +51,7 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
     }
 
     /**
-     * Perform a User's activity based on decision
+     * Perform a User's activity based on decision.
      *
      * @param decision decision percentage
      * @return pass or fail of activity
@@ -71,7 +71,7 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
     }
 
     /**
-     * Find the most likely / closest decision to what you will make
+     * Find the most likely / closest decision to what you will make.
      *
      * @param decision decision percentage
      * @return most likely <code>Integer</code> decision index
@@ -83,17 +83,17 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
         float distance = Math.abs(probabilitiesAsList.get(0) - decision);
         int idx = 0;
         for (int c = 1; c < probabilitiesAsList.size(); c++) {
-            float fDistance = Math.abs(probabilitiesAsList.get(c) - decision);
-            if (fDistance < distance) {
+            float distanceAsFloat = Math.abs(probabilitiesAsList.get(c) - decision);
+            if (distanceAsFloat < distance) {
+                distance = distanceAsFloat;
                 idx = c;
-                distance = fDistance;
             }
         }
         return probabilitiesAsList.get(idx);
     }
 
     /**
-     * Random percentage within a range of integer values
+     * Random percentage within a range of integer values.
      *
      * @param lower lower bound number
      * @param upper upper bound number
@@ -105,7 +105,7 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
     }
 
     /**
-     * Random number within a range of integer values
+     * Random number within a range of integer values.
      *
      * @param lower lower bound number
      * @param upper upper bound number
@@ -117,9 +117,9 @@ public abstract class AIUserTestCase extends MyApplicationTestCase {
     }
 
     /**
-     * Use recursion to call a method
+     * Use recursion to call a method.
      *
-     * @param methodToCall method to call based on probablity
+     * @param methodToCall method to call based on probability
      */
     private void runMethodDefinedInMap(final String methodToCall) {
         try {
