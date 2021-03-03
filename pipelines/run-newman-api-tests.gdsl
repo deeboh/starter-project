@@ -1,12 +1,12 @@
 #!groovy
 import org.jenkinsci.plugins.workflow.steps.FlowInterruptedException
 
-DEFAULT_EMAIL = 'anthonyl22@gmail.com'
+DEFAULT_EMAIL = 'micke.ficke@gmail.com'
 
 node {
 
-    def DEFAULT_ADMIN_JENKINS_USER_ID = 'ADD HERE'
-    def DEFAULT_PROJECT_URL = 'ADD HERE'
+    def DEFAULT_ADMIN_JENKINS_USER_ID = 'admin'
+    def DEFAULT_PROJECT_URL = 'https://github.com/deeboh/starter-project.git'
     def COLLECTIONS_PATH = 'src/test/resources/postman'
     def GLOBALS_ENVIRONMENT_FILE = 'globals.environment.json'
 
