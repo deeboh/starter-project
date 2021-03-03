@@ -131,6 +131,7 @@ node {
     }
 
     stage('Checkout') {
+        when (BRANCH_NAME != 'master') {
         checkout([$class                           : 'GitSCM',
                   branches                         : [[name: "${branchName}"]],
                   doGenerateSubmoduleConfigurations: false,
@@ -138,6 +139,7 @@ node {
                   submoduleCfg                     : [],
                   userRemoteConfigs                : [[credentialsId: DEFAULT_ADMIN_JENKINS_USER_ID, url: DEFAULT_PROJECT_URL]]
         ])
+        }
     }
 
     stage('Run Tests') {
