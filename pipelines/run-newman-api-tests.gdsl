@@ -12,7 +12,7 @@ node {
 
     String collectionName = 'smoke'
     def testEnvironment = 'test'
-    def branchName = 'origin/develop'
+    def BRANCH_NAME = 'origin/develop'
 
     stage('Configuration?') {
 
