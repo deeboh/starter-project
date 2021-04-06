@@ -131,7 +131,7 @@ node {
     }
 
     stage('Checkout') {
-        when (BRANCH_NAME != 'origing/develop') {
+        when (BRANCH_NAME != 'origin/develop') {
         checkout([$class                           : 'GitSCM',
                   branches                         : [[name: "${branchName}"]],
                   doGenerateSubmoduleConfigurations: false,
